@@ -1,24 +1,31 @@
-import React from 'react'
+import React from 'react';
 
-const links = [
-  { name: 'Spotify', href: 'https://open.spotify.com/artist/1FAmQXVtc3nHpsWoDOPMxA' },
-  { name: 'Apple Music', href: 'https://music.apple.com/us/artist/imperial-tide/1218180216' },
-  { name: 'YouTube', href: 'https://www.youtube.com/@ImperialTide' },
-  { name: 'All Links', href: 'https://lnk.to/ImperialTide' },
-]
-
-export default function ListenNow(){
+export default function ListenNow() {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-3">
-      {links.map(l => (
-        <a key={l.name}
-           href={l.href}
-           target="_blank"
-           rel="noreferrer"
-           className="px-5 py-3 rounded border border-white/30 hover:bg-white hover:text-black transition uppercase tracking-widest text-sm no-underline">
-          {l.name}
-        </a>
-      ))}
-    </div>
-  )
+    <section className="bg-black text-white py-20 px-4 text-center">
+      <h2 className="text-2xl md:text-3xl font-semibold mb-6 tracking-widest uppercase">
+        Watch Our Latest Video
+      </h2>
+
+      <div className="relative w-full max-w-4xl mx-auto overflow-hidden" style={{ paddingBottom: '56.25%', height: 0 }}>
+        <iframe
+          className="absolute top-0 left-0 w-full h-full rounded"
+          src="https://www.youtube.com/embed/xF9EPQw5qeg"
+          title="Imperial Tide - Official Music Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+
+      <a
+        href="https://lnk.to/ExistenceInCrisis"
+        target="_blank"
+        rel="noreferrer"
+        className="btn-primary inline-block mt-10"
+      >
+        Listen to “Existence in Crisis”
+      </a>
+    </section>
+  );
 }
