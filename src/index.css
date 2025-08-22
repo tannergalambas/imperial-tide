@@ -2,40 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
+:root {
+  color-scheme: dark;
+}
 
-html, body, #root { height: 100%; }
-body { @apply bg-black text-white font-body; }
-a { @apply underline-offset-4; }
-.container-narrow { @apply max-w-5xl mx-auto px-4; }
+html, body, #root {
+  height: 100%;
+}
 
+body {
+  @apply bg-black text-white font-body m-0 p-0;
+}
+
+/* Anchor Tags */
+a {
+  @apply underline-offset-4;
+}
+
+/* Container Utility */
+.container-narrow {
+  @apply max-w-5xl mx-auto px-4;
+}
+
+/* Primary Button Style */
 .btn-primary {
-    @apply bg-white text-black font-semibold px-6 py-2 rounded transition hover:bg-gray-300;
-  }
+  @apply bg-white text-black font-semibold px-6 py-2 rounded transition hover:bg-gray-300;
+}
 
-/* Embed Aspect Ratio Helper */
+/* Responsive 16:9 Aspect Ratio Embed */
 .aspect-w-16 {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-  }
-  .aspect-w-16 iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-  
-  /* General Responsive Enhancements */
-  body {
-    @apply bg-black text-white m-0 p-0 font-sans;
-  }
-  
-  section {
-    @apply px-4 md:px-8;
-  }
-  
-  .btn-primary {
-    @apply bg-white text-black font-semibold px-6 py-2 rounded transition hover:bg-gray-300;
-  }
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+}
+.aspect-w-16 iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Section padding default */
+section {
+  @apply px-4 md:px-8;
+}

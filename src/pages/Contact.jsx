@@ -1,30 +1,44 @@
-import React, { useState } from 'react'
-import { Helmet } from 'react-helmet-async'
+import React from 'react';
 
-export default function Contact(){
-  const [sent, setSent] = useState(false)
-  const onSubmit = async (e) => {
-    e.preventDefault()
-    await new Promise(r => setTimeout(r, 400))
-    setSent(true)
-  }
+export default function Contact() {
   return (
-    <section className="container-narrow py-16 md:py-24">
-      <Helmet><title>Contact — Imperial Tide Fan Clone</title></Helmet>
-      <h1 className="font-display uppercase tracking-widest2 text-4xl">Contact</h1>
-      <p className="mt-3 text-gray-300">Send a note. (Wire this to a real service later.)</p>
-      {sent ? (
-        <p className="mt-6 text-emerald-300">Thanks! We&apos;ll be in touch.</p>
-      ) : (
-        <form onSubmit={onSubmit} className="mt-8 grid gap-4 max-w-xl">
-          <input className="px-4 py-3 rounded bg-black/60 border border-white/20" placeholder="Name" required />
-          <input type="email" className="px-4 py-3 rounded bg-black/60 border border-white/20" placeholder="Email" required />
-          <textarea rows="5" className="px-4 py-3 rounded bg-black/60 border border-white/20" placeholder="Message" required></textarea>
-          <button className="px-5 py-3 rounded bg-white text-black uppercase tracking-widest hover:opacity-90 w-max" type="submit">
-            Send
+    <section className="bg-black text-white py-20 px-6 text-center min-h-screen">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 uppercase tracking-widest">
+          Get In Touch
+        </h1>
+        <p className="text-lg md:text-xl text-gray-300 mb-12">
+          For general inquiries, press, booking, or anything else — reach out using the form below.
+        </p>
+
+        <form className="space-y-6">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full px-4 py-3 bg-black border border-white text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-white/20"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full px-4 py-3 bg-black border border-white text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-white/20"
+          />
+          <textarea
+            rows="5"
+            placeholder="Your Message"
+            className="w-full px-4 py-3 bg-black border border-white text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-white/20"
+          ></textarea>
+          <button
+            type="submit"
+            className="w-full md:w-auto px-8 py-3 border border-white text-white hover:bg-white hover:text-black uppercase tracking-widest transition"
+          >
+            Send Message
           </button>
         </form>
-      )}
+
+        <p className="mt-6 text-xs text-gray-500 italic">
+          *This is a placeholder form. Replace with Mailchimp embed when ready.
+        </p>
+      </div>
     </section>
-  )
+  );
 }

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import TideCamp from '../components/TideCamp'
-import MailingList from '../components/MailingList'
 import VideoFeature from '../components/VideoFeature'
+import Footer from '../components/Footer'
 
 export default function Home(){
   return (
@@ -12,8 +11,6 @@ export default function Home(){
         <meta name="description" content="A fan-made React clone inspired by imperialtide.com" />
       </Helmet>
       <VideoFeature /> {/* ✅ insert it where you want it to appear */}
-      <TideCamp />
-      <MailingList />
     </>
   )
 }
